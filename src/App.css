@@ -7,13 +7,30 @@
 }
 
 body {
+  background-color: rgb(68, 60, 133);
   margin: 0;
   padding: 0;
+}
+
+.input{
+  height: 30px;
+  text-shadow: 3px black;
+  border-radius: 5px;
+  text-align: center;
+  color:rgb(38, 36, 55);
+}
+
+.input_btn{
+  border-radius: 5px;
+  height: 30px;
+  margin: 20px;
 }
 
 .addTask {
   height: 10vh;
   background-color: rgb(79, 48, 163);
+  height: 200px;
+  background-image: linear-gradient(rgb(68, 60, 133), rgb(32, 12, 7));
   width: 100%;
   display: flex;
   justify-content: center;
@@ -21,8 +38,8 @@ body {
 }
 
 .list {
-  background: rgb(30, 81, 82);
-  background-image: url("Background.jpg");
+  margin-bottom: 200px;
+  background-image: linear-gradient(rgb(32, 12, 7 ), rgb(68, 60, 133));
   height: auto;
   width: 100%;
   display: flex;
