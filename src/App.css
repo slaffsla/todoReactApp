@@ -30,6 +30,7 @@ body {
   min-width: 100vh;
 }
 .fact {
+  padding: 20px;
   margin-left: 40px;
   margin-right: 40px;
   border-radius: 50px;
@@ -38,6 +39,7 @@ body {
   background-image: linear-gradient(rgb(32, 12, 7), rgb(68, 60, 133));
   display: flex;
   justify-content: center;
+  text-align: center;
   align-items: center;
   width: auto;
   color: aliceblue;
