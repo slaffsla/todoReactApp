@@ -17,29 +17,55 @@ body {
   text-shadow: 3px black;
   border-radius: 5px;
   text-align: center;
-  color:rgb(38, 36, 55);
 }
 
-.input_btn{
+.fetch_btn{
   border-radius: 5px;
   height: 30px;
   margin: 20px;
-}
+  margin-top: 30px;
 
-.addTask {
-  height: 10vh;
-  background-color: rgb(79, 48, 163);
+}
+.main_view {
+  min-width: 100vh;
+}
+.fact {
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 50px;
+  height: 100vh;
   height: 200px;
-  background-image: linear-gradient(rgb(68, 60, 133), rgb(32, 12, 7));
-  width: 100%;
+  background-image: linear-gradient(rgb(32, 12, 7), rgb(68, 60, 133));
   display: flex;
   justify-content: center;
   align-items: center;
+  width: auto;
+  color: aliceblue;
+  -webkit-animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
+
+.slide-tr {
+	-webkit-animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-tr 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-tr {
+  0% {
+    -webkit-transform: translateY(100px) translateX(100px);
+            transform: translateY(100px) translateX(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0) translateX(0);
+            transform: translateY(0) translateX(0);
+  }
+  
+}
+
 
 .list {
   margin-bottom: 200px;
-  background-image: linear-gradient(rgb(32, 12, 7 ), rgb(68, 60, 133));
+  background-image: linear-gradient(rgb(68, 60, 133 ), rgb(32, 12, 7));
   height: auto;
   width: 100%;
   display: flex;

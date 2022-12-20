@@ -1,64 +1,29 @@
 import "./App.css";
-import { Task } from "./Task";
-import { useState } from "react";
+import Axios from "axios";
+import { useEffect, useState } from "react";
 
-function App() {
-  const [todoList, setTodoList] = useState([]);
-  const [newTask, setNewTask] = useState("");
+export default function App() {
+  const [catFact, setCatFact] = useState("");
 
-  const handleChange = (event) => {
-    setNewTask(event.target.value);
+  const fetchCatFact = () => {
+    Axios.get("https://catfact.ninja/fact").then((res) => {
+      console.log(res);
+      setCatFact(res.data.fact);
+    });
   };
 
-  const addTask = () => {
-    const task = {
-      id: todoList.length === 0 ? 1 : todoList[todoList.length - 1].id + 1,
-      taskName: newTask,
-      completed: false,
-    };
-    setTodoList(task.taskName !== "" ? [...todoList, task] : todoList);
-  };
-
-  const deleteTask = (id) => {
-    setTodoList(todoList.filter((task) => task.id !== id));
-  };
-
-  const completeTask = (id) => {
-    setTodoList(
-      todoList.map((task) => {
-        if (task.id === id) {
-          return { ...task, completed: !task.completed };
-        } else {
-          return task;
-        }
-      })
-    );
-  };
+  useEffect(() => {
+    fetchCatFact();
+  }, []);
 
   return (
     <div className="App">
-      <div className="addTask">
-        <input className="input" onChange={handleChange} />
-        <button className="input_btn" onClick={addTask}>
-          {" "}
-          Add Task
-        </button>
-      </div>
-      <div className="list">
-        {todoList.map((task) => {
-          return (
-            <Task
-              taskName={task.taskName}
-              id={task.id}
-              completed={task.completed}
-              deleteTask={deleteTask}
-              completeTask={completeTask}
-            />
-          );
-        })}
+      <button className="fetch_btn" onClick={fetchCatFact}>
+        Generate Cat Fact
+      </button>
+      <div className="main_view">
+        <p className="fact">{catFact}</p>
       </div>
     </div>
   );
 }
-
-export default App;
